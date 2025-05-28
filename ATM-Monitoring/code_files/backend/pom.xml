@@ -1,0 +1,312 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>org.springframework.boot</groupId>
+		<artifactId>spring-boot-starter-parent</artifactId>
+		<version>3.2.3</version>
+		<relativePath/> <!-- lookup parent from repository -->
+	</parent>
+	<groupId>com.example</groupId>
+	<artifactId>atmiothub</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>atmiothub</name>
+	<description>Demo project for Spring Boot</description>
+	<url/>
+	<licenses>
+		<license/>
+	</licenses>
+	<developers>
+		<developer/>
+	</developers>
+	<scm>
+		<connection/>
+		<developerConnection/>
+		<tag/>
+		<url/>
+	</scm>
+	<properties>
+		<java.version>21</java.version>
+		<maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
+		<spring-cloud-azure.version>5.7.0</spring-cloud-azure.version>
+		<azure-sdk.version>1.2.21</azure-sdk.version>
+		<azure.core.version>1.40.0</azure.core.version>
+        <azure.messaging.servicebus.version>7.13.3</azure.messaging.servicebus.version>
+        <azure.core.amqp.version>2.8.7</azure.core.amqp.version>
+	</properties>
+	<dependencies>
+		<!-- Azure IoT Hub Dependencies -->
+		<dependency>
+			<groupId>com.microsoft.azure.sdk.iot</groupId>
+			<artifactId>iot-device-client</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+    <groupId>com.azure.spring</groupId>
+    <artifactId>spring-cloud-azure-stream-binder-servicebus</artifactId>
+    <version>4.11.0</version>
+</dependency>
+		<dependency>
+			<groupId>com.microsoft.azure.sdk.iot</groupId>
+			<artifactId>iot-service-client</artifactId>
+			<version>2.1.0</version>
+		</dependency>
+		<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.9.1</version>
+</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-devtools</artifactId>
+			<scope>runtime</scope>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security</groupId>
+			<artifactId>spring-security-test</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.azure</groupId>
+			<artifactId>azure-storage-blob</artifactId>
+		</dependency>
+		<!-- Database dependencies -->
+		<dependency>
+			<groupId>com.h2database</groupId>
+			<artifactId>h2</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jpa</artifactId>
+		</dependency>
+		<!-- Other dependencies -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-data-jdbc</artifactId>
+		</dependency>
+		
+<!-- Add your dependencies here -->
+
+<dependency>
+
+    <groupId>org.springframework.boot</groupId>
+
+    <artifactId>spring-boot-starter-mail</artifactId>
+
+</dependency>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.azure.spring</groupId>
+			<artifactId>spring-cloud-azure-starter</artifactId>
+		</dependency>
+		<!-- <dependency>
+			<groupId>com.azure.spring</groupId>
+			<artifactId>spring-cloud-azure-starter-storage</artifactId>
+		</dependency> -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+		<!-- Application Insights -->
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>applicationinsights-spring-boot-starter</artifactId>
+			<version>1.0.0-BETA</version>
+		</dependency>
+		<dependency>
+			<groupId>com.azure</groupId>
+			<artifactId>azure-security-keyvault-secrets</artifactId>
+		</dependency>
+		<!-- Log4j2 Logs to App Insights -->
+		<dependency>
+			<groupId>com.microsoft.azure</groupId>
+			<artifactId>applicationinsights-logging-log4j2</artifactId>
+			<version>2.1.1</version>
+		</dependency>
+		<dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+        </dependency>
+		<dependency>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>mssql-jdbc</artifactId>
+			<scope>runtime</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.microsoft.azure.functions/azure-functions-java-library -->
+		<dependency>
+			<groupId>com.microsoft.azure.functions</groupId>
+			<artifactId>azure-functions-java-library</artifactId>
+			<version>3.1.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+			<optional>true</optional>
+		</dependency>
+	
+
+    <dependency>
+
+        <groupId>org.json</groupId>
+
+        <artifactId>json</artifactId>
+
+        <version>20210307</version>
+
+    </dependency>
+
+	<dependency>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+	<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-core</artifactId>
+</dependency>
+<dependency>
+    <groupId>org.springframework.security</groupId>
+    <artifactId>spring-security-config</artifactId>
+</dependency>
+<!-- https://mvnrepository.com/artifact/io.jsonwebtoken/jjwt -->
+<dependency>
+    <groupId>io.jsonwebtoken</groupId>
+    <artifactId>jjwt</artifactId>
+    <version>0.12.6</version>
+</dependency>
+<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+    <scope>provided</scope>
+</dependency>
+
+
+		<dependency>
+			<groupId>com.azure</groupId>
+			<artifactId>azure-messaging-servicebus</artifactId>
+			<version>${azure.messaging.servicebus.version}</version>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/com.azure.spring/spring-cloud-azure-starter-stream-servicebus -->
+<dependency>
+    <groupId>com.azure.spring</groupId>
+    <artifactId>spring-cloud-azure-starter-stream-servicebus</artifactId>
+    <version>5.20.1</version>
+</dependency>
+
+
+		<dependency>
+			<groupId>com.azure</groupId>
+			<artifactId>azure-core</artifactId>
+			<version>${azure.core.version}</version>
+		</dependency>
+		<dependency>
+			<groupId>io.projectreactor</groupId>
+			<artifactId>reactor-core</artifactId>
+			<version>3.5.11</version>
+		</dependency>
+	
+	
+   <dependency>
+     <groupId>org.testng</groupId>
+     <artifactId>testng</artifactId>
+     <version>7.0.0</version>
+   </dependency>
+	</dependencies>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.azure.spring</groupId>
+				<artifactId>spring-cloud-azure-dependencies</artifactId>
+				<version>${spring-cloud-azure.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>com.azure</groupId>
+				<artifactId>azure-sdk-bom</artifactId>
+				<version>${azure-sdk.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<configuration>
+					 <source>${java.version}</source>
+                    <target>${java.version}</target>
+					<annotationProcessorPaths>
+						<path>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</path>
+					</annotationProcessorPaths>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.microsoft.azure</groupId>
+				<artifactId>azure-container-apps-maven-plugin</artifactId>
+				<version>0.1.0</version>
+				<configuration>
+					<subscriptionId>your-subscription-id</subscriptionId>
+					<resourceGroup>your-resource-group</resourceGroup>
+					<appEnvironmentName>your-app-environment-name</appEnvironmentName>
+					<region>your-region</region>
+					<appName>atmiothub</appName>
+					<containers>
+						<container>
+							<type>code</type>
+							<directory>${project.basedir}</directory>
+						</container>
+					</containers>
+					<ingress>
+						<external>true</external>
+						<targetPort>8080</targetPort>
+					</ingress>
+					<scale>
+						<minReplicas>0</minReplicas>
+						<maxReplicas>10</maxReplicas>
+					</scale>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<excludes>
+						<exclude>
+							<groupId>org.projectlombok</groupId>
+							<artifactId>lombok</artifactId>
+						</exclude>
+					</excludes>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>
