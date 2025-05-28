@@ -1,0 +1,163 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5f5f5;
+}
+.dashboard-container {
+  font-family: "Roboto", sans-serif;
+  padding: 20px;
+  min-height: 100vh;
+  transition: background 0.3s ease-in-out;
+}
+.dark-mode {
+  background: #1e1e1e;
+  color: white;
+}
+.light-mode {
+  background: #f8f9fa;
+  color: black;
+}
+.navbar {
+  display: none;
+}
+.dashboard-navbar {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  padding: 10px 20px;
+  background: #007bff;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+.dashboard-nav-center {
+  grid-column: 2;
+  text-align: center;
+}
+.dashboard-title {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #FFFFFF;
+}
+.dashboard-toggle-mode {
+  grid-column: 3;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+.dashboard-toggle-mode:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.dark-mode .dashboard-navbar {
+  background: rgba(34, 34, 34, 0.95);
+}
+.dark-mode .dashboard-title {
+  color: white;
+}
+.dark-mode .dashboard-toggle-mode {
+  color: blue;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+.dark-mode .dashboard-toggle-mode:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+.stats-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+.stats-box {
+  flex: 1;
+  min-width: 200px;
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+}
+.dark-mode .stats-box {
+  background: #333;
+  color: white;
+}
+.stats-box:hover {
+  transform: scale(1.05);
+}
+.stats-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+.stats-title {
+  font-size: 16px;
+  margin: 5px 0;
+}
+.stats-value {
+  font-size: 22px;
+  font-weight: bold;
+}
+.atm-container {
+  margin-top: 30px;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+.dark-mode .atm-container {
+  background: #333;
+  color: white;
+}
+.atm-header {
+  background-color: #007bff;
+  color:#FFFFFF;
+  border-radius: 10px;
+  text-align: center;
+  padding:18px;
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 15px;
+}
+.dark-mode .atm-header{
+  background-color: rgba(34, 34, 34, 0.95);
+}
+.atm-list {
+  display: flex;
+  flex-direction: column;
+}
+.atm-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  transition: background 0.2s;
+}
+.dark-mode .atm-item {
+  color: #66b2ff;
+}
+.atm-item:hover {
+  background: rgba(0, 123, 255, 0.1);
+}
+.dark-mode .atm-item:hover {
+  background: rgba(102, 178, 255, 0.2);
+}
+.dashboard-active-atm {
+  text-decoration: underline;
+  text-decoration-color: green;
+}
+.dashboard-inactive-atm {
+  text-decoration: underline;
+  text-decoration-color: red;
+}
